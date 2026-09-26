@@ -1,66 +1,38 @@
-import java.util.Objects;
 import java.util.Scanner;
-
 
 public class Interfaz {
 
     public void menu() {
-        Lanzador l = new Lanzador();
-        String opcion = "";
-        String numero = "";
-        do {
-            System.out.println("\n--- Detector de primos ---");
-            System.out.println("¿Qué nivel quieres usar? (1, 2, 3 o 4):");
-            opcion = new Scanner(System.in).next();
+        Lanzador lanzador = new Lanzador();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("--- Detector de primos ---");
+        System.out.println("¿Qué nivel quieres usar? (1, 2, 3 o 4):");
+        System.out.print("> ");
+        String opcion = scanner.next();
+
+        while (true) {
+            System.out.println("Introduce un número (o 'salir' para terminar):");
+            System.out.print("> ");
+            String numero = scanner.next();
+
+            if ("salir".equalsIgnoreCase(numero)) {
+                System.out.println("Saliendo del programa");
+                break;
+            }
+
             switch (opcion) {
-                    case "1" -> {
-                        while (true) {
-                            System.out.println("Introduce un número:");
-                            numero = new Scanner(System.in).next();
-                            if ("salir".equalsIgnoreCase(numero)) {
-                                System.out.println("Saliendo del programa");
-                                break;}
-                            l.Caso1(numero);
-                        }
-                        System.out.println("Saliendo del programa");
-                    }
-                    case "2" -> {
-                        while (true) {
-                            System.out.println("Introduce un número:");
-                            numero = new Scanner(System.in).next();
-                            if ("salir".equalsIgnoreCase(numero)) {
-                                System.out.println("Saliendo del programa");
-                                break;}
-                            l.Caso2(numero);
-                        }
-                        System.out.println("Saliendo del programa");
-                    }
-                    case "3" -> {
-                        while (true) {
-                            System.out.println("Introduce un número:");
-                            numero = new Scanner(System.in).next();
-                            if ("salir".equalsIgnoreCase(numero)) {
-                                System.out.println("Saliendo del programa");
-                                break;}
-                            l.Caso3(numero);
-                        }
-                        System.out.println("Saliendo del programa");
-
-                    }
-                    case "4" -> {
-                        while (true) {
-                            System.out.println("Introduce un número:");
-                            numero = new Scanner(System.in).next();
-                            if ("salir".equalsIgnoreCase(numero)) {
-                                System.out.println("Saliendo del programa");
-                                break;}
-                            l.Caso4(numero);
-                        }
-                        System.out.println("Saliendo del programa");
-
-                    }
+                case "1" -> lanzador.caso1(numero);
+                case "2" -> lanzador.caso2(numero);
+                case "3" -> lanzador.caso3(numero);
+                case "4" -> lanzador.caso4(numero);
+                default -> {
+                    System.out.println("Nivel no válido");
+                    return;
                 }
-        } while (!Objects.equals(opcion, "0"));
-        System.out.println("Saliendo de la aplicación");
+            }
+        }
+
+        scanner.close();
     }
 }

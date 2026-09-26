@@ -3,7 +3,7 @@ import java.io.*;
 public class Lanzador {
 
 
-    public void Caso1(String numero) {
+    public void caso1(String numero) {
         try {
             int prueba = Integer.parseInt(numero);
             //*ProcessBuilder factorizar = new ProcessBuilder("factor",numero).start() No necesita Process proceso;
@@ -26,7 +26,7 @@ public class Lanzador {
     }
 
 
-    public void Caso2(String numero) {
+    public void caso2(String numero) {
         try {
             int prueba = Integer.parseInt(numero);
             //*ProcessBuilder factorizar = new ProcessBuilder("factor",numero).start() No necesita Process proceso;
@@ -48,7 +48,7 @@ public class Lanzador {
         }
     }
 
-    public void Caso3(String numero) {
+    public void caso3(String numero) {
         File outputFile = new File("factor_output.log");
         File errorFile = new File("factor_error.log");
 
@@ -79,7 +79,7 @@ public class Lanzador {
         }
     }
 
-    public void Caso4(String numero) {
+    public void caso4(String numero) {
         try {
             int prueba = Integer.parseInt(numero);
             if (prueba <= 0) {
