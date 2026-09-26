@@ -36,10 +36,28 @@ public class Interfaz {
                         System.out.println("Saliendo del programa");
                     }
                     case "3" -> {
-                        //* l.Caso3(numero);
+                        while (true) {
+                            System.out.println("Introduce un número:");
+                            numero = new Scanner(System.in).next();
+                            if ("salir".equalsIgnoreCase(numero)) {
+                                System.out.println("Saliendo del programa");
+                                break;}
+                            l.Caso3(numero);
+                        }
+                        System.out.println("Saliendo del programa");
+
                     }
                     case "4" -> {
-                        //* l.Caso4(numero);
+                        while (true) {
+                            System.out.println("Introduce un número:");
+                            numero = new Scanner(System.in).next();
+                            if ("salir".equalsIgnoreCase(numero)) {
+                                System.out.println("Saliendo del programa");
+                                break;}
+                            l.Caso4(numero);
+                        }
+                        System.out.println("Saliendo del programa");
+
                     }
                 }
         } while (!Objects.equals(opcion, "0"));
